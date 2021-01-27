@@ -30,16 +30,6 @@ let operator = "";
 let clear = false;
 let previousKeyPress;
 
-const printVars = () => {
-  console.log(`
-  Operand One: ${operandOne}
-  Operator: ${operator}
-  Operand Two: ${operandTwo}
-  Operation: ${operandOne} ${operator} ${operandTwo}
-  opOneValid: ${opOneValid},  opTwoValid: ${opTwoValid}
-  clear: ${clear}`);
-};
-
 const highlightKey = function (target) {
   if (!previousKeyPress) {
     target.classList.add("last-pressed"); // Add highlight
@@ -74,7 +64,6 @@ const pushNum = function (num) {
     opTwoValid = true;
     updateDisplay(operandTwo);
   }
-  printVars();
 };
 
 const useOperator = function (op) {
@@ -116,7 +105,6 @@ const addDec = function () {
     operandTwo += ".";
     updateDisplay(operandTwo);
   }
-  printVars();
 };
 
 const pushOperator = function (nextOp) {
@@ -133,7 +121,6 @@ const pushOperator = function (nextOp) {
     if (operator != "" && opTwoValid) {
       useOperator(operator);
       operator = nextOp; // Set next operator to use
-      // updateDisplay(operandOne);
     } else {
       switch (nextOp) {
         case "-":
@@ -161,7 +148,6 @@ const pushOperator = function (nextOp) {
     operandOne += "-";
     updateDisplay(operandOne);
   }
-  printVars();
 };
 
 const equals = function () {
@@ -171,9 +157,7 @@ const equals = function () {
     useOperator(operator);
     operator = "";
     clear = true;
-    // updateDisplay(operandOne);
   }
-  printVars();
 };
 
 // Pass clicked number
@@ -203,7 +187,6 @@ btnClear.addEventListener("click", function () {
   displayText.textContent = "0";
   [operandOne, operandTwo, operator] = ["", "", ""];
   [opOneValid, opTwoValid, clear] = [false, false, false];
-  printVars();
 });
 
 // Unselect current key
