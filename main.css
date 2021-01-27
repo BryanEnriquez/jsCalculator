@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  /* background-color: rgb(219, 56, 88); */
+  background-color: whitesmoke;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  width: 450px;
+  min-width: 320px;
+  height: 500px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  background-color: whitesmoke;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.29);
+}
+
+.display {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  padding: 0 15px;
+  height: 80px;
+  font-size: 4rem;
+  /* background-color: silver; */
+  background-color: #000;
+  border-radius: 3px 3px 0 0;
+  overflow: hidden;
+}
+
+.display-text {
+  /* padding: 0 10px; */
+  width: 100%;
+  font-size: 5.5rem;
+  text-align: right;
+  /* background-color: red; */
+  color: #fff;
+}
+
+.interface {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  gap: 10px 10px;
+  padding: 10px;
+  font-size: 4rem;
+  color: #fff;
+  border-radius: 0 0 4px 4px;
+}
+
+.interface div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000;
+  border-radius: 4px;
+}
+
+.interface div:hover {
+  background-color: rgb(34, 34, 34);
+}
+
+.btn-equals {
+  grid-area: 2/4/6/5;
+}
+
+.last-pressed {
+  border: 4px solid crimson;
+}
